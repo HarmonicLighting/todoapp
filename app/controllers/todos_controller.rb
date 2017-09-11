@@ -35,6 +35,16 @@ class TodosController < ApplicationController
     @todos = Todo.all
   end
 
+  def destroy
+    @todo = Todo.find(params[:id])
+    if @todo.destroy
+      flash[:notice] = ["Success!","The selected todo has been deleted"]
+      redirect_to todos_path
+    else
+      render 'destroy'
+    end
+  end
+
   private
 
   def todo_params

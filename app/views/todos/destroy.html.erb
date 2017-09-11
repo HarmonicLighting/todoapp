@@ -1,0 +1,11 @@
+<% if @todo.errors.any? %>
+  <h2>The following errors prevented your todo from being deleted</h2>
+  <ul>
+    <% @todo.errors.full_messages.each do |msg|%>
+      <li>
+        <%= msg %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+<%= link_to "Go to index", todos_path, class: "btn btn-warning" %>

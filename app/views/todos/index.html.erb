@@ -9,7 +9,11 @@
       <p>
         <%= todo.description %>
       </p>
+      <%= link_to "Details", todo_path(todo), class: "btn btn-primary" %>
+      <%= link_to "Edit", edit_todo_path(todo), class: "btn btn-info" %>
+      <%= link_to "Delete", todo_path(todo), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger" %>
     </div>
   </div>
   <hr />
 <% end %>
+<%= link_to "Create new todo", new_todo_path, class: "btn btn-success" %>
