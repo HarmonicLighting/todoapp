@@ -1,0 +1,15 @@
+<h2>List of all your todos</h2>
+<% @todos.each do |todo| %>
+  <div class="row">
+    <div class="col-xs-3">
+      Title: <b><%= todo.name %></b>
+    </div>
+    <div class="col-xs-9">
+      Description:
+      <p>
+        <%= todo.description %>
+      </p>
+    </div>
+  </div>
+  <hr />
+<% end %>
